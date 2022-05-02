@@ -1,0 +1,159 @@
+/****************************************************************************
+** DeKoratorConfig meta object code from reading C++ file 'standard input'
+**
+** Created by: The TQt Meta Object Compiler version 26 (TQt 3.5.0)
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#undef QT_NO_COMPAT
+#include "/home/martin/Downloads/tde-extra-pkgs/tde-twin-extra-styles/tde-twin-style-dekorator/src/twin-style-dekorator-trinity-14.0.12/client/config/deKoratorconfig.h"
+
+#include <ntqmetaobject.h>
+#include <ntqapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.5.0. It"
+#error "cannot be used with the include files from this version of TQt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *DeKoratorConfig::className() const
+{
+    return "DeKoratorConfig";
+}
+
+TQMetaObject *DeKoratorConfig::metaObj = 0;
+static TQMetaObjectCleanUp cleanUp_DeKoratorConfig( "DeKoratorConfig", &DeKoratorConfig::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+TQString DeKoratorConfig::tr( const char *s, const char *c )
+{
+    if ( tqApp )
+	return tqApp->translate( "DeKoratorConfig", s, c, TQApplication::DefaultCodec );
+    else
+	return TQString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+TQString DeKoratorConfig::trUtf8( const char *s, const char *c )
+{
+    if ( tqApp )
+	return tqApp->translate( "DeKoratorConfig", s, c, TQApplication::UnicodeUTF8 );
+    else
+	return TQString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+TQMetaObject* DeKoratorConfig::staticMetaObject()
+{
+    if ( metaObj ) {
+	return metaObj;
+}
+#ifdef QT_THREAD_SUPPORT
+    if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->lock();
+    if ( metaObj ) {
+	if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->unlock();
+	return metaObj;
+    }
+#endif // QT_THREAD_SUPPORT
+    TQMetaObject* parentObject = TQObject::staticMetaObject();
+    static const TQUParameter param_slot_0[] = {
+	{ 0, &static_QUType_ptr, "TDEConfig", TQUParameter::In }
+    };
+    static const TQUMethod slot_0 = {"load", 1, param_slot_0 };
+    static const TQUParameter param_slot_1[] = {
+	{ 0, &static_QUType_ptr, "TDEConfig", TQUParameter::In }
+    };
+    static const TQUMethod slot_1 = {"save", 1, param_slot_1 };
+    static const TQUMethod slot_2 = {"defaults", 0, 0 };
+    static const TQUParameter param_slot_3[] = {
+	{ "item", &static_QUType_ptr, "TQListViewItem", TQUParameter::In }
+    };
+    static const TQUMethod slot_3 = {"themeSelected", 1, param_slot_3 };
+    static const TQUParameter param_slot_4[] = {
+	{ 0, &static_QUType_int, 0, TQUParameter::In }
+    };
+    static const TQUMethod slot_4 = {"selectionChanged", 1, param_slot_4 };
+    static const TQUMethod slot_5 = {"installNewTheme", 0, 0 };
+    static const TQUMethod slot_6 = {"removeSelectedTheme", 0, 0 };
+    static const TQUMethod slot_7 = {"setTheme", 0, 0 };
+    static const TQMetaData slot_tbl[] = {
+	{ "load(TDEConfig*)", &slot_0, TQMetaData::Public },
+	{ "save(TDEConfig*)", &slot_1, TQMetaData::Public },
+	{ "defaults()", &slot_2, TQMetaData::Public },
+	{ "themeSelected(TQListViewItem*)", &slot_3, TQMetaData::Protected },
+	{ "selectionChanged(int)", &slot_4, TQMetaData::Protected },
+	{ "installNewTheme()", &slot_5, TQMetaData::Protected },
+	{ "removeSelectedTheme()", &slot_6, TQMetaData::Protected },
+	{ "setTheme()", &slot_7, TQMetaData::Protected }
+    };
+    static const TQUMethod signal_0 = {"changed", 0, 0 };
+    static const TQMetaData signal_tbl[] = {
+	{ "changed()", &signal_0, TQMetaData::Public }
+    };
+    metaObj = TQMetaObject::new_metaobject(
+	"DeKoratorConfig", parentObject,
+	slot_tbl, 8,
+	signal_tbl, 1,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_DeKoratorConfig.setMetaObject( metaObj );
+#ifdef QT_THREAD_SUPPORT
+    if (tqt_sharedMetaObjectMutex) tqt_sharedMetaObjectMutex->unlock();
+#endif // QT_THREAD_SUPPORT
+    return metaObj;
+}
+
+void* DeKoratorConfig::tqt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "DeKoratorConfig" ) )
+	return this;
+    return TQObject::tqt_cast( clname );
+}
+
+// SIGNAL changed
+void DeKoratorConfig::changed()
+{
+    activate_signal( staticMetaObject()->signalOffset() + 0 );
+}
+
+bool DeKoratorConfig::tqt_invoke( int _id, TQUObject* _o )
+{
+    switch ( _id - staticMetaObject()->slotOffset() ) {
+    case 0: load((TDEConfig*)static_QUType_ptr.get(_o+1)); break;
+    case 1: save((TDEConfig*)static_QUType_ptr.get(_o+1)); break;
+    case 2: defaults(); break;
+    case 3: themeSelected((TQListViewItem*)static_QUType_ptr.get(_o+1)); break;
+    case 4: selectionChanged((int)static_QUType_int.get(_o+1)); break;
+    case 5: installNewTheme(); break;
+    case 6: removeSelectedTheme(); break;
+    case 7: setTheme(); break;
+    default:
+	return TQObject::tqt_invoke( _id, _o );
+    }
+    return TRUE;
+}
+
+bool DeKoratorConfig::tqt_emit( int _id, TQUObject* _o )
+{
+    switch ( _id - staticMetaObject()->signalOffset() ) {
+    case 0: changed(); break;
+    default:
+	return TQObject::tqt_emit(_id,_o);
+    }
+    return TRUE;
+}
+#ifndef QT_NO_PROPERTIES
+
+bool DeKoratorConfig::tqt_property( int id, int f, TQVariant* v)
+{
+    return TQObject::tqt_property( id, f, v);
+}
+
+bool DeKoratorConfig::tqt_static_property( TQObject* , int , int , TQVariant* ){ return FALSE; }
+#endif // QT_NO_PROPERTIES

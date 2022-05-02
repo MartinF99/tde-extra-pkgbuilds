@@ -1,0 +1,17 @@
+This directory contains some extra files shipped with DeKorator 0.3
+and intended for theme creators.
+
+portDeK -- a script for porting older DeKorator themes (1.x-2.x) to
+           DeKorator 0.3
+
+deKhelp -- DOxygen theme documentation
+
+template-theme.tar.gz -- this theme is meant to be a template theme
+                         for other themes,  this theme features all
+			 possible buttons.
+
+ugly-theme.tar.gz     -- the purpose  of this theme  is to help you
+                         understand  the way  deKorator  paints the
+			 decorations.
+
+The contents of this directory are not installed.

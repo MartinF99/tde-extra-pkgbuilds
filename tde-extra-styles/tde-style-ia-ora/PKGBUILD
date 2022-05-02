@@ -1,0 +1,59 @@
+# Maintainer: Michael Manley <mmanley@nasutek.com>
+# Contributor: David C. Rankin <drankinatty at gmail dot com>
+
+_mod="tde-style-ia-ora"
+_cat=applications/themes/
+_kdemod="${_mod/tde/kde}"
+
+pkgname="tde-${_mod}"
+pkgver=14.0.12
+pkgrel=1
+pkgdesc="Trinity Desktop Enviroment $_cat$_mod"
+arch=('i686' 'x86_64')
+url="https://scm.trinitydesktop.org/scm/git/${_mod}"
+license=('GPL')
+provides=("${_mod}")
+groups=('tde-complete')
+depends=(
+  'tde-tdebase'
+)
+makedepends=(
+  'tde-cmake-trinity'
+  'autoconf'
+  'pkgconfig'
+)
+optdepends=()
+conflicts=("trinity-${_kdemod}" "kdemod3-${_kdemod}")
+replaces=("trinity-${_mod}")
+options=('staticlibs' 'libtool' '!strip')
+install=
+
+source=("https://mirror.ppa.trinitydesktop.org/trinity/releases/R${pkgver}/main/${_cat}${_mod}-trinity-${pkgver}.tar.xz")
+sha512sums=('648688be4e32436bb2bc1ad0b269a42d2762713bfa74de08c8ef9ebd72525637b5aeb6716fda46050a233dccc5fdbf4b9bea6ba5e2c4ad85835f8b0e1f4f1479')
+
+[ -n "$TDEDIR" ] || TDEDIR=/opt/trinity
+[ -n "$QTDIR" ] || QTDIR=${TDEDIR}/tqt3
+
+build() {
+  msg "Creating out-of-source build directory: ${srcdir}/build"
+  mkdir -p "$srcdir/build"
+  cd "$srcdir/build"
+
+  msg "Starting cmake..."
+  cmake ${srcdir}/${_mod}-trinity-${pkgver} \
+    -GNinja \
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
+    -DCMAKE_INSTALL_PREFIX=${TDEDIR} \
+    -DSYSCONF_INSTALL_DIR=${TDEDIR}/etc \
+    -DBUILD_ALL=ON \
+    -DWITH_ALL_OPTIONS=ON
+
+  msg "Building - ${pkgname}..."
+  ninja $NUMJOBS
+}
+
+package() {
+  msg "Packaging - ${pkgname}-${pkgver}"
+  cd "$srcdir/build"
+  DESTDIR="$pkgdir" ninja -j1 install
+}
